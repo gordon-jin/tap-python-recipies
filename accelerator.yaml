@@ -13,7 +13,7 @@ accelerator:
     defaultValue: python-simple-rest
     required: true
 
-  - name: functionName
+  - name: branchName
     inputType: text
     label: Branch-name
     defaultValue: main
