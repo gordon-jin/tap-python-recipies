@@ -12,12 +12,6 @@ accelerator:
     label: Project Name
     defaultValue: python-simple-rest
     required: true
-
-  - name: branch-name
-    inputType: text
-    label: choose branch name if use use GitOps
-    defaultValue: main
-    required: false
     
   - name: interfaceType
     inputType: select
@@ -106,6 +100,7 @@ engine:
         - text: main
           with: "#functionName"
 
+
     - include: [ "python-rest-liveupdate/*" ]
       condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
@@ -113,6 +108,7 @@ engine:
         substitutions:
         - text: main
           with: "#functionName"
+
 
     - include: [ "python-func-liveupdate/*" ]
       condition: "#interfaceType == 'python-func-liveupdate'"
