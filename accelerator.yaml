@@ -9,13 +9,19 @@ accelerator:
   options:
   - name: functionName
     inputType: text
-    label: Project Name
+    label: Default function name
     defaultValue: python-simple-rest
     required: true
+
+  - name: branch-name
+    inputType: text
+    label: choose branch name if use use GitOps
+    defaultValue: main
+    required: false
     
   - name: interfaceType
     inputType: select
-    label: Choose Python Framework
+    label: Event Type
     choices:
     - value: python-simple-rest
       text: シンプルなWebアプリケーションのデプロイ
@@ -119,9 +125,13 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
+	    exclude: [ "python-simple-func-w-gitops/workload.yaml" ]
       condition: "#interfaceType == 'python-simple-func-w-gitops'"
+    - include: [ "python-simple-func-w-gitops/workload.yaml" ]
+      condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
+	      condition: "#branch-name != 'main'"
         substitutions:
-        - text: main
-          with: "#functionName"
+        - text: "value: main"
+          with: "value: #branch-name"
