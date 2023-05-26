@@ -131,4 +131,4 @@ engine:
       - type: ReplaceText
         substitutions:
         - text: "  - name: gitops_branch"
-          with: "  - name: gitops_branch\n    value: main\n"
+          with: "'  - name: gitops_branch\n    value: ' + #branchName"
