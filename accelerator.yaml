@@ -9,7 +9,7 @@ accelerator:
   options:
   - name: functionName
     inputType: text
-    label: Project Name
+    label: Default Project Name
     defaultValue: python-simple-rest
     required: true
 
@@ -18,7 +18,7 @@ accelerator:
     label: choose branch name if use use GitOps
     defaultValue: main
     required: false
-
+    
   - name: interfaceType
     inputType: select
     label: Choose Python Framework
@@ -125,11 +125,10 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
-      exclude: [ "python-simple-func-w-gitops/workload.yaml" ]
-      condition: "#interfaceType == 'python-simple-func-w-gitops'"
+      condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
-        condition: "#branch-name != 'main'"
+	    condition: "#branch-name != 'main'"
         substitutions:
         - text: "value: main"
           with: "value: #branch-name"
