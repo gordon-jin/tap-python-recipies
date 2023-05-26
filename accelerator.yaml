@@ -128,7 +128,7 @@ engine:
       condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
-	    condition: "#branch-name != 'main'"
+        condition: "#branch-name != 'main'"
         substitutions:
         - text: "value: main"
           with: "value: #branch-name"
