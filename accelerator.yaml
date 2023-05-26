@@ -131,7 +131,7 @@ engine:
         - text: main
           with: "#functionName"
 
-    - include: [ "python-simple-func-w-gitops/workload.yaml" ]
+    - include: [ "python-simple-func-w-gitops/*" ]
       condition: "#interfaceType == 'python-simple-func-w-gitops'"
       chain:
       - type: ReplaceText
