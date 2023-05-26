@@ -130,5 +130,5 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "spec:"
-          with: "'spec:\n  -name: gitops_branch\n    value: #branchName\n  - name: gitops_repository_owner\n    value: gordon-jin'"
+        - text: "params:"
+          with: "params:\n  -name: gitops_branch\n    value: #branchName\n  - name: gitops_repository_owner\n    value: gordon-jin"
