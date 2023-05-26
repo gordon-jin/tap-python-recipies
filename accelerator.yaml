@@ -18,6 +18,12 @@ accelerator:
     label: Branch-name
     defaultValue: main
     required: true
+
+  - name: ownerName
+    inputType: text
+    label: Owner-name
+    defaultValue: gordon-jin
+    required: true
     
   - name: interfaceType
     inputType: select
@@ -132,3 +138,5 @@ engine:
         substitutions:
         - text: "  - name: gitops_branch"
           with: "'  - name: gitops_branch\n    value: ' + #branchName"
+        - text: "  - name: gitops_repository_owner"
+          with: "'  - name: gitops_repository_owner\n    value: ' + #ownerName"
