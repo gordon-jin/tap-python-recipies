@@ -9,10 +9,16 @@ accelerator:
   options:
   - name: functionName
     inputType: text
-    label: Project Name
+    label: Default Project Name
     defaultValue: python-simple-rest
     required: true
-  
+
+  - name: branchname
+    inputType: text
+    label: choose branch name if use use GitOps
+    defaultValue: main
+    required: false
+    
   - name: interfaceType
     inputType: select
     label: Choose Python Framework
@@ -100,7 +106,6 @@ engine:
         - text: main
           with: "#functionName"
 
-
     - include: [ "python-rest-liveupdate/*" ]
       condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
@@ -108,7 +113,6 @@ engine:
         substitutions:
         - text: main
           with: "#functionName"
-
 
     - include: [ "python-func-liveupdate/*" ]
       condition: "#interfaceType == 'python-func-liveupdate'"
@@ -119,9 +123,10 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
-      condition: "#interfaceType == 'python-simple-func-w-gitops'"
+      condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
+        condition: "#branchname != 'main'"
         substitutions:
-        - text: main
-          with: "#functionName"
+        - text: "value: main"
+          with: "value: #branch-name"
