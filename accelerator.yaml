@@ -106,7 +106,6 @@ engine:
         - text: main
           with: "#functionName"
 
-
     - include: [ "python-rest-liveupdate/*" ]
       condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
@@ -114,7 +113,6 @@ engine:
         substitutions:
         - text: main
           with: "#functionName"
-
 
     - include: [ "python-func-liveupdate/*" ]
       condition: "#interfaceType == 'python-func-liveupdate'"
