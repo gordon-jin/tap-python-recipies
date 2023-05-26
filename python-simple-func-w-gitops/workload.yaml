@@ -13,6 +13,7 @@ spec:
       value: func.main
   params:
   - name: gitops_branch
+  - name: gitops_repository_owner
   - name:  gitops_server_kind
     value: github
   - name: gitops_server_address
