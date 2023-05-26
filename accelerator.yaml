@@ -12,6 +12,12 @@ accelerator:
     label: Project Name
     defaultValue: python-simple-rest
     required: true
+
+  - name: functionName
+    inputType: text
+    label: Branch-name
+    defaultValue: main
+    required: true
     
   - name: interfaceType
     inputType: select
