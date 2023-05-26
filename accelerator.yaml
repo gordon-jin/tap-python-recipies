@@ -9,7 +9,7 @@ accelerator:
   options:
   - name: functionName
     inputType: text
-    label: Default Project Name
+    label: Project Name
     defaultValue: python-simple-rest
     required: true
     
@@ -119,7 +119,7 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
-      condition: "#interfaceType == 'python-simple-func-w-gitops'"	
+      condition: "#interfaceType == 'python-simple-func-w-gitops'"
       chain:
       - type: ReplaceText
         substitutions:
