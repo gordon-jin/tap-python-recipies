@@ -82,7 +82,7 @@ engine:
         - text: main
           with: "#functionName"
 
-    - include: [ "python-simple-func-w-test/*" ]
+    - include: [ "python-simple-func-w-test/func_test.py", "python-simple-func-w-test/func.py" ]
       condition: "#interfaceType == 'python-simple-func-w-test'"
       chain:
       - type: ReplaceText
@@ -108,6 +108,7 @@ engine:
 
 
     - include: [ "python-rest-liveupdate/*" ]
+      exclude: [ "config/*.yaml" ]
       condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
       - type: ReplaceText
@@ -124,10 +125,10 @@ engine:
         - text: main
           with: "#functionName"
 
-    - include: [ "python-simple-func-w-gitops/*" ]
+    - include: [ "python-simple-func-w-gitops/workload.yaml" ]
       condition: "#interfaceType == 'python-simple-func-w-gitops'"
       chain:
       - type: ReplaceText
         substitutions:
         - text: main
-          with: "#functionName"
+          with: "#branchName"
