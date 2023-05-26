@@ -106,6 +106,7 @@ engine:
         - text: main
           with: "#functionName"
 
+
     - include: [ "python-rest-liveupdate/*" ]
       condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
@@ -113,6 +114,7 @@ engine:
         substitutions:
         - text: main
           with: "#functionName"
+
 
     - include: [ "python-func-liveupdate/*" ]
       condition: "#interfaceType == 'python-func-liveupdate'"
@@ -126,7 +128,6 @@ engine:
       condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
-        condition: "#branchname != 'main'"
         substitutions:
-        - text: "value: main"
-          with: "value: #branch-name"
+        - text: main
+          with: "#functionName"
