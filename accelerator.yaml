@@ -13,6 +13,12 @@ accelerator:
     defaultValue: python-simple-rest
     required: true
     
+  - name: branch-name
+    inputType: text
+    label: choose branch name if use use GitOps
+    defaultValue: main
+    required: true
+    
   - name: interfaceType
     inputType: select
     label: Choose Python Framework
