@@ -125,13 +125,13 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
-	    exclude: [ "python-simple-func-w-gitops/workload.yaml" ]
+      exclude: [ "python-simple-func-w-gitops/workload.yaml" ]
       condition: "#interfaceType == 'python-simple-func-w-gitops'"
     - include: [ "python-simple-func-w-gitops/workload.yaml" ]
       condition: "#interfaceType == 'python-simple-func-w-gitops'"	
       chain:
       - type: ReplaceText
-	      condition: "#branch-name != 'main'"
+        condition: "#branch-name != 'main'"
         substitutions:
         - text: "value: main"
           with: "value: #branch-name"
