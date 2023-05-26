@@ -131,4 +131,4 @@ engine:
       - type: ReplaceText
         substitutions:
         - text: "params:"
-          with: "params:\n  -name: gitops_branch\n    value: #branchName\n  - name: gitops_repository_owner\n    value: gordon-jin"
+          with: "'params:\n  -name: gitops_branch\n    value: main\n  - name: gitops_repository_owner\n    value: gordon-jin'"
