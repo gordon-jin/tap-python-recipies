@@ -73,7 +73,7 @@ accelerator:
 engine:
   merge:
     - include: [ "python-simple-rest/*" ]
-      condition: "#interfaceType == python-simple-rest"
+      condition: "#interfaceType == 'python-simple-rest'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -81,7 +81,7 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func/*" ]
-      condition: "#interfaceType == python-simple-func"
+      condition: "#interfaceType == 'python-simple-func'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -97,7 +97,7 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-rest-w-swagger/*" ]
-      condition: "#interfaceType == python-simple-rest-w-swagger"
+      condition: "#interfaceType == 'python-simple-rest-w-swagger'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -105,7 +105,7 @@ engine:
           with: "#functionName"
 
     - include: [ "python-rdb-sb-func/*" ]
-      condition: "#interfaceType == python-rdb-sb-func"
+      condition: "#interfaceType == 'python-rdb-sb-func'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -115,7 +115,7 @@ engine:
 
     - include: [ "python-rest-liveupdate/*" ]
       exclude: [ "config/*.yaml" ]
-      condition: "#interfaceType == python-rest-liveupdate"
+      condition: "#interfaceType == 'python-rest-liveupdate'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -124,7 +124,7 @@ engine:
 
 
     - include: [ "python-func-liveupdate/*" ]
-      condition: "#interfaceType == python-func-liveupdate"
+      condition: "#interfaceType == 'python-func-liveupdate'"
       chain:
       - type: ReplaceText
         substitutions:
@@ -132,7 +132,7 @@ engine:
           with: "#functionName"
 
     - include: [ "python-simple-func-w-gitops/*" ]
-      condition: "#interfaceType == python-simple-func-w-gitops"
+      condition: "#interfaceType == 'python-simple-func-w-gitops'"
       chain:
       - type: ReplaceText
         substitutions:
