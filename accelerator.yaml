@@ -136,7 +136,7 @@ engine:
       chain:
       - type: ReplaceText
         substitutions:
-        - text: "  - name: gitops_branch"
+        - text: "  - name: gitops_branch\n    value: main"
           with: "'  - name: gitops_branch\n    value: ' + #branchName"
-        - text: "  - name: gitops_repository_owner"
+        - text: "  - name: gitops_repository_owner\n    value: mhoshi-vm"
           with: "'  - name: gitops_repository_owner\n    value: ' + #ownerName"
