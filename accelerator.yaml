@@ -1,6 +1,6 @@
 accelerator:
   displayName: TAP Python Recipies
-  description: A FaaS Python function powered by Function Buildpacks for Knative
+  description: Application Accelator for all TAP Python Recipies repository 
   iconUrl: https://images.freecreatives.com/wp-content/uploads/2015/05/smiley-559124_640.jpg
   tags:
     - simple
@@ -30,13 +30,13 @@ accelerator:
     label: Choose Python Framework
     choices:
     - value: python-simple-rest
-      text: シンプルなWebアプリケーションのデプロイ
+      text: "シンプルなWebアプリケーションのデプロイ"
     - value: python-simple-func
-      text: Functionアプリケーションのデプロイ
+      text: "Functionアプリケーションのデプロイ"
     - value: python-simple-func-w-test
       text: "テスト&スキャンのスクリプトの登録"
     - value: python-simple-rest-w-swagger
-      text: 動的API登録の確認
+      text: "動的API登録の確認"
     - value: python-rdb-sb-func
       text: "Service Bindings 連携の確認"
     - value: python-rest-liveupdate
@@ -88,7 +88,7 @@ engine:
         - text: main
           with: "#functionName"
 
-    - include: [ "python-simple-func-w-test/func_test.py", "python-simple-func-w-test/func.py" ]
+    - include: [ "python-simple-func-w-test/*" ]
       condition: "#interfaceType == 'python-simple-func-w-test'"
       chain:
       - type: ReplaceText
