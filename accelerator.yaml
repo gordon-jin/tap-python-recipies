@@ -44,7 +44,6 @@ accelerator:
     defaultValue: python-simple-rest
     required: true
 engine:
-  type: Provenance
   merge:
     - include: [ "python-simple-rest/*" ]
       condition: "#interfaceType == 'python-simple-rest'"
@@ -105,3 +104,4 @@ engine:
           with: "'  - name: gitops_branch\n    value: ' + #branchName"
         - text: "  - name: gitops_repository_owner\n    value: mhoshi-vm"
           with: "'  - name: gitops_repository_owner\n    value: ' + #ownerName"
+    - type: Provenance
