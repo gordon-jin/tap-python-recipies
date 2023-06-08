@@ -44,6 +44,7 @@ accelerator:
     defaultValue: python-simple-rest
     required: true
 engine:
+  type: Provenance
   merge:
     - include: [ "python-simple-rest/*" ]
       condition: "#interfaceType == 'python-simple-rest'"
